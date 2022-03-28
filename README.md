@@ -2,6 +2,13 @@
 #### made by nk.jeon
 Spring Boot를 이용한 도서 검색API
 
+# jar 실행 방법
+- 경로 : https://drive.google.com/drive/folders/1GKkYdVWaPH8-LuLT7cmS4uBoc8ovy5NF?usp=sharing
+- 실행방법
+    - bookSearchService.jar 다운로드 
+    - 다운로드 위치에서 java -jar bookSearchService.jar 실행
+    - localhost:8080/ or localhost:8080/login 으로 접속  
+
 # 기능
 1. 로그인/회원가입
     - JWT Token 인증 방식
