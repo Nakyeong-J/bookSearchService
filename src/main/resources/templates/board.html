@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Search</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/board.css}"/>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" readonly="true">Book Search</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li id="searchMenu" name="menu" class="active"><a onclick="Main.searchBoard()">Search</a></li>
+                    <li id="historyMenu" name="menu"><a onclick="Main.searchHistory()">History</a></li>
+                    <li id="rankMenu" name="menu"><a onclick="Main.searchTopRank()">Rank</a></li>
+                    <li id="logout"><a onclick="Main.logout()">LOGOUT</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+
+        </div>
+    </nav>
+
+    <div class="container" id="searchBook">
+        <div class="starter-template">
+            <form class="navbar-form" id="mainForm">
+                <div class="form-group">
+                    <input id="currentPageNumber" type="hidden" name="page" value="1">
+                    <input id="totalPageNumber" type="hidden" value="1">
+                    <input type="text" class="form-control" id="searchKeyword" name="searchKeyword" placeholder="Search for..."/>
+                    <button class="btn btn-primary btn-sm" id="btnSearch" type="button">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="table-option">
+                <table class="table table-layout" id="noList" hidden="true">
+                    <tr>
+                        <td>찾으시는 정보가 없습니다.</td>
+                    </tr>
+                </table>
+                <table class="table table-bordered table-hover table-layout" id="searchList">
+                    <colgroup>
+                        <col width="45%">
+                        <col width="20%">
+                        <col width="20%">
+                        <col width="15%">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th>작가</th>
+                        <th>출판사</th>
+                        <th>가격</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+
+        </div>
+        <nav class="nav-center">
+            <ul class="pagination" id="pagination" hidden="true"></ul>
+        </nav>
+    </div><!-- /.container -->
+
+    <div class="container" id="bookDetailDiv" hidden="true">
+        <div class="starter-template">
+            <div class="table-option">
+                <table class="table" readonly="true" id="bookDetail"></table>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-sm" id="btnReturnToList" type="button">
+            <h5>목록으로</h5>
+        </button>
+    </div>
+
+    <div class="container" id="searchHistoryByUser" hidden="true">
+        <div class="header_title">
+            <h2> My History </h2>
+        </div>
+        <div class="starter-template">
+            <div class="table-option">
+                <table class="table" readonly="true" id="historyList">
+                    <tr>
+                        <th>검색어</th>
+                        <th>검색시간</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="topRankKeyword" hidden="true">
+        <div class="header_title">
+            <h2> Top Rank Keyword </h2>
+        </div>
+        <div class="starter-template">
+            <div class="table-option">
+                <table class="table" readonly="true" id="topRankList">
+                    <tr>
+                        <th>Ranking</th>
+                        <th>Keyword</th>
+                        <th>Search Count</th>
+                    </tr>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/bookSearch.js}"></script>
+</body>
+</html>

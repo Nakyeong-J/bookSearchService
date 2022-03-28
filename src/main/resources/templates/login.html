@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+    <title>로그인 폼</title>
+
+</head>
+
+<body>
+<div id="mainDiv">
+    <div class="container" id="loginDiv" >
+        <div class="input-form-backgroud row">
+            <div class="input-form col-md-12 mx-auto card align-middle">
+                <div class="card-title" style="margin-top:30px;">
+                    <h2 class="card-title text-center " style="color:#113366;">로그인</h2>
+                </div>
+                <div class="card-body">
+                    <form class="form-signin" id="loginForm">
+                        <h5 class="form-signin-heading">로그인 정보</h5>
+                        <label for="userId" class="sr-only">ID</label>
+                        <input type="text" id="userId" name="userId" class="form-control" placeholder="ID" required autofocus><BR>
+                        <label for="password" class="sr-only">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required><br>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <button id="btnLogin" class="btn btn-primary btn-block" type="button">로 그 인</button>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <a class="btn btn-secondary btn-block" th:href="@{/join}">회 원 가 입</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/login.js}"></script>
+</div>
+</body>
+</html>

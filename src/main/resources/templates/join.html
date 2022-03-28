@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 화면</title> <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/join.css}"/>
+</head>
+<body>
+<div class="container">
+    <div class="input-form-backgroud row">
+        <div class="input-form col-md-12 mx-auto">
+            <h4 class="mb-3 text-center">회원가입</h4>
+            <form class="validation-form" id="joinForm" novalidate>
+                <div class="mb-3">
+                    <label for="userId">아이디(필수)</label>
+                    <input type="text" class="form-control" id="userId" name="userId"  required>
+                </div>
+                <div class="mb-3">
+                    <label for="username">이름(필수)</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password">비밀번호(필수)</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button class="btn btn-primary btn-lg btn-block" id="btnJoin" type="button">가입 완료</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/join.js}"></script>
+</body>
+</html>

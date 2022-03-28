@@ -1,0 +1,49 @@
+body {
+    padding-top: 50px;
+    height: 100%;
+}
+.starter-template {
+    padding: 40px 10px 15px 15px;
+    min-height: 80%;
+    text-align: center;
+}
+
+.navbar-form .form-group {
+    width: 100%;
+}
+
+.navbar-form .form-control {
+    width: 50%;
+}
+
+th {
+    text-align: center;
+}
+
+html {
+    height: 100%;
+}
+
+.container{
+    height: 100%;
+}
+
+.nav-center{
+    text-align: center;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;  /* 말줄임 적용 */
+}
+
+.table-layout {
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 30px;
+}
+
+.header_title {
+    margin-top : 30px;
+}
