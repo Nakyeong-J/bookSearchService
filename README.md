@@ -13,8 +13,7 @@ Spring Boot를 이용한 도서 검색API
 1. 로그인/회원가입
     - JWT Token 인증 방식
 2. 책 검색
-    - Kakao OpenApi, Naver Open API 사용
-    - 기본적으로 Kakao OpenApi를 이용하여 검색하나, Kakao OpenAPI 장애 발생 시, Naver OpenAPI를 사용하여 검색한다.
+    - Kakao OpenApi 사용
 3. 내 검색 히스토리 조회
     - 로그인 한 유저가 검색한 이력을 최근순으로 제공
 4. 인기 키워드 목록 조회
